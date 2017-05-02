@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/pizzaorder', ['as' => 'app.ingredients.create', 'uses' =>'PizzaIngredientsController@create']);
 Route::get('/pizzaorder', ['uses' => 'PizzaIngredientsController@index']);
