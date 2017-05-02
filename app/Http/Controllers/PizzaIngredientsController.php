@@ -2,6 +2,7 @@
 
 use App\models\PizzaIngredients;
 use Illuminate\Routing\Controller;
+use Ramsey\Uuid\Uuid;
 
 class PizzaIngredientsController extends Controller {
 
@@ -24,7 +25,10 @@ class PizzaIngredientsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $data = request()->all();
+        $data['id'] = Uuid::uuid4();
+        $record = PizzaIngredients::create($data);
+        return view ('pizzaorder', $record->toArray());
 	}
 
 	/**
