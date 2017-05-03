@@ -1,39 +1,34 @@
 <?php namespace App\Http\Controllers;
 
-use App\models\PizzaCrustsCheesesIngredientsConnection;
 use Illuminate\Routing\Controller;
-use Ramsey\Uuid\Uuid;
 
-class PizzaCrustsCheesesIngredientsConnectionController extends Controller {
+class PizzasIngredientsConnectionController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /pizzacrustscheesesingredientsconnection
+	 * GET /pizzasingredientsconnection
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        return PizzaCrustsCheesesIngredientsConnection::get();
+		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /pizzacrustscheesesingredientsconnection/create
+	 * GET /pizzasingredientsconnection/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-        $data = request()->all();
-        $data['id'] = Uuid::uuid4();
-        $record = PizzaCrustsCheesesIngredientsConnection::create($data);
-        return view ('pizzaorder', $record->toArray());
+		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /pizzacrustscheesesingredientsconnection
+	 * POST /pizzasingredientsconnection
 	 *
 	 * @return Response
 	 */
@@ -44,7 +39,7 @@ class PizzaCrustsCheesesIngredientsConnectionController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /pizzacrustscheesesingredientsconnection/{id}
+	 * GET /pizzasingredientsconnection/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -56,7 +51,7 @@ class PizzaCrustsCheesesIngredientsConnectionController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /pizzacrustscheesesingredientsconnection/{id}/edit
+	 * GET /pizzasingredientsconnection/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -68,7 +63,7 @@ class PizzaCrustsCheesesIngredientsConnectionController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /pizzacrustscheesesingredientsconnection/{id}
+	 * PUT /pizzasingredientsconnection/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -80,7 +75,7 @@ class PizzaCrustsCheesesIngredientsConnectionController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /pizzacrustscheesesingredientsconnection/{id}
+	 * DELETE /pizzasingredientsconnection/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

@@ -1,39 +1,34 @@
 <?php namespace App\Http\Controllers;
 
-use App\models\PizzaIngredients;
 use Illuminate\Routing\Controller;
-use Ramsey\Uuid\Uuid;
 
-class PizzaIngredientsController extends Controller {
+class IngredientsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /pizzaingredients
+	 * GET /ingredients
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        return PizzaIngredients::get();
+		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /pizzaingredients/create
+	 * GET /ingredients/create
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-        $data = request()->all();
-        $data['id'] = Uuid::uuid4();
-        $record = PizzaIngredients::create($data);
-        return view ('pizzaorder', $record->toArray());
+		//
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /pizzaingredients
+	 * POST /ingredients
 	 *
 	 * @return Response
 	 */
@@ -44,7 +39,7 @@ class PizzaIngredientsController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /pizzaingredients/{id}
+	 * GET /ingredients/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -56,7 +51,7 @@ class PizzaIngredientsController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /pizzaingredients/{id}/edit
+	 * GET /ingredients/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -68,7 +63,7 @@ class PizzaIngredientsController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /pizzaingredients/{id}
+	 * PUT /ingredients/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -80,7 +75,7 @@ class PizzaIngredientsController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /pizzaingredients/{id}
+	 * DELETE /ingredients/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

@@ -2,22 +2,22 @@
 
 use Illuminate\Routing\Controller;
 
-class PizzaCheesesController extends Controller {
+class CheesesController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /pizzacheeses
+	 * GET /cheeses
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        return PizzaCheesesController::get();
+		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /pizzacheeses/create
+	 * GET /cheeses/create
 	 *
 	 * @return Response
 	 */
@@ -28,7 +28,7 @@ class PizzaCheesesController extends Controller {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /pizzacheeses
+	 * POST /cheeses
 	 *
 	 * @return Response
 	 */
@@ -39,7 +39,7 @@ class PizzaCheesesController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /pizzacheeses/{id}
+	 * GET /cheeses/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -51,7 +51,7 @@ class PizzaCheesesController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /pizzacheeses/{id}/edit
+	 * GET /cheeses/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -63,7 +63,7 @@ class PizzaCheesesController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /pizzacheeses/{id}
+	 * PUT /cheeses/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -75,7 +75,7 @@ class PizzaCheesesController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /pizzacheeses/{id}
+	 * DELETE /cheeses/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response

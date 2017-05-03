@@ -1,24 +1,23 @@
 <?php namespace App\Http\Controllers;
 
-use App\models\PizzaCrusts;
 use Illuminate\Routing\Controller;
 
-class PizzaCrustsController extends Controller {
+class CrustsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /pizzacrusts
+	 * GET /crusts
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-        return PizzaCrusts::get();
+		//
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /pizzacrusts/create
+	 * GET /crusts/create
 	 *
 	 * @return Response
 	 */
@@ -29,7 +28,7 @@ class PizzaCrustsController extends Controller {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /pizzacrusts
+	 * POST /crusts
 	 *
 	 * @return Response
 	 */
@@ -40,7 +39,7 @@ class PizzaCrustsController extends Controller {
 
 	/**
 	 * Display the specified resource.
-	 * GET /pizzacrusts/{id}
+	 * GET /crusts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -52,7 +51,7 @@ class PizzaCrustsController extends Controller {
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /pizzacrusts/{id}/edit
+	 * GET /crusts/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -64,7 +63,7 @@ class PizzaCrustsController extends Controller {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /pizzacrusts/{id}
+	 * PUT /crusts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -76,7 +75,7 @@ class PizzaCrustsController extends Controller {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /pizzacrusts/{id}
+	 * DELETE /crusts/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
