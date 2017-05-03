@@ -6,11 +6,10 @@
 </head>
 <body>
 
-{!! Form::open(['url' => route('app.ingredients.create')]) !!}
+{!! Form::open(['url' => route('app.pizzas.create')]) !!}
 
-{{ Form::label('id', 'Ingredients')}}<br/>
+{{ !!  }}
 
-{{ Form::select('id', $ingredients )}}<br/>
 
 {{ Form::submit('Click Me!')}}
 

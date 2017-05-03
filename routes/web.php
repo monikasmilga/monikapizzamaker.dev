@@ -46,3 +46,14 @@ Route::get('/ingredients', function ()
     return view('ingredients');
 });
 Route::post('/ingredients', ['as' => 'app.ingredients.create', 'uses' => 'IngredientsController@create']);
+
+
+/**
+ * Route to PIZZA ORDERING form
+ */
+Route::get('/pizzas', function ()
+{
+    return view('pizzas');
+});
+Route::post('/pizzas', ['as' => 'app.pizzas.create', 'uses' => 'PizzasController@create']);
+

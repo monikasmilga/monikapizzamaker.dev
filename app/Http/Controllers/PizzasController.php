@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Pizzas;
 use Illuminate\Routing\Controller;
 
 class PizzasController extends Controller {
@@ -12,7 +13,12 @@ class PizzasController extends Controller {
 	 */
 	public function index()
 	{
-		//
+        $data = request()->all();
+        $record = Pizzas::create(array(
+            'name' => $data['ingredients'],
+            'calories' => $data['calories']
+        ));
+        return view('pizzas', $record->toArray());
 	}
 
 	/**

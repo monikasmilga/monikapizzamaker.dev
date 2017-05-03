@@ -13,5 +13,5 @@ class Pizzas extends CoreModel
 {
 
     protected $table = 'pizzas';
-    protected $fillable = ['id', 'name', 'phone', 'comment'];
+    protected $fillable = ['id', 'name', 'phone', 'comment', '	crust_id', 'cheese_id'];
 }
