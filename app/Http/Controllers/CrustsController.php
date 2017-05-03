@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Crusts;
 use Illuminate\Routing\Controller;
 
 class CrustsController extends Controller {
@@ -23,7 +24,12 @@ class CrustsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $data = request()->all();
+        $record = Crusts::create(array(
+            'name' => $data['crusts'],
+            'calories' => $data['calories']
+        ));
+        return view('crusts', $record->toArray());
 	}
 
 	/**
