@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Cheeses;
 use Illuminate\Routing\Controller;
 
 class CheesesController extends Controller {
@@ -23,7 +24,12 @@ class CheesesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $data = request()->all();
+        $record = Cheeses::create(array(
+            'name' => $data['cheeses'],
+            'calories' => $data['calories']
+        ));
+        return view('cheeses', $record->toArray());
 	}
 
 	/**
