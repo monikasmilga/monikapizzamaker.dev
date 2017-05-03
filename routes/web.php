@@ -15,5 +15,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/pizzaorder', ['as' => 'app.ingredients.create', 'uses' =>'PizzaIngredientsController@create']);
-Route::get('/pizzaorder', ['uses' => 'PizzaIngredientsController@index']);
+/**
+ * Route to CRUSTS form
+ */
+
+Route::get('/crusts', function ()
+{
+    return view('crusts');
+});
+Route::post('/crusts', ['as' => 'app.crusts.create', 'uses' => 'CrustsController@create']);
+
+
+/**
+ * Route to CHEESES form
+ */
+
+Route::get('/cheeses', function ()
+{
+    return view('cheeses');
+});
+Route::post('/cheeses', ['as' => 'app.cheeses.create', 'uses' => 'CheesesController@create']);
+
+
+/**
+ * Route to INGREDIENTS form
+ */
+
+Route::get('/ingredients', function ()
+{
+    return view('ingredients');
+});
+Route::post('/ingredients', ['as' => 'app.ingredients.create', 'uses' => 'IngredientsController@create']);

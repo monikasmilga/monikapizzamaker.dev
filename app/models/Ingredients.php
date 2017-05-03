@@ -12,6 +12,6 @@ namespace App\models;
 class Ingredients extends CoreModel
 {
 
-    protected $table = 'cheeses';
+    protected $table = 'ingredients';
     protected $fillable = ['id', 'name', 'calories'];
 }

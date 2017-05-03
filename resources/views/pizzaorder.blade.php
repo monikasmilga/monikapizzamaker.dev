@@ -5,6 +5,7 @@
     <title>Picos užsakymas</title>
 </head>
 <body>
+
 {!! Form::open(['url' => route('app.ingredients.create')]) !!}
 
 {{ Form::label('id', 'Ingredients')}}<br/>
@@ -17,3 +18,5 @@
 
 </body>
 </html>
+
+

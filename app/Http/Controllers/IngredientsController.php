@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\models\Ingredients;
 use Illuminate\Routing\Controller;
 
 class IngredientsController extends Controller {
@@ -23,7 +24,12 @@ class IngredientsController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $data = request()->all();
+        $record = Ingredients::create(array(
+            'name' => $data['ingredients'],
+            'calories' => $data['calories']
+        ));
+        return view('ingredients', $record->toArray());
 	}
 
 	/**
