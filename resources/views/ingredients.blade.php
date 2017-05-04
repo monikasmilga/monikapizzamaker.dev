@@ -13,15 +13,15 @@
 
 {!! Form::open(['url' => route('app.ingredients.create')]) !!}
 
-{{ Form::label('ingredients', 'Ingredients')}}
+{{ Form::label('ingredients', 'Ingredientai')}}
 
 {{ Form::text('ingredients') }}<br/>
 
-{{ Form::label('calories', 'Calories')}}
+{{ Form::label('calories', 'Kalorijų kiekis')}}
 
 {{ Form::text('calories') }}<br/>
 
-{{ Form::submit('Submit')}}
+{{ Form::submit('Įvesti')}}
 
 {!! Form::close() !!}
 

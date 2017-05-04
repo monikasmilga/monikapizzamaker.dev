@@ -11,15 +11,15 @@
 @endif
 {!! Form::open(['url' => route('app.cheeses.create')]) !!}
 
-{{ Form::label('cheeses', 'Cheeses')}}
+{{ Form::label('cheeses', 'Sūrio pagardas')}}
 
 {{ Form::text('cheeses') }}<br/>
 
-{{ Form::label('calories', 'Calories')}}
+{{ Form::label('calories', 'Kalorijų kiekis')}}
 
 {{ Form::text('calories') }}<br/>
 
-{{ Form::submit('Submit')}}
+{{ Form::submit('Įvesti')}}
 
 {!! Form::close() !!}
 

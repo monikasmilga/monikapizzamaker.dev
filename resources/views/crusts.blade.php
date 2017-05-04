@@ -12,15 +12,15 @@
 
 {!! Form::open(['url' => route('app.crusts.create')]) !!}
 
-{{ Form::label('crusts', 'Crusts')}}
+{{ Form::label('crusts', 'Picos padas')}}
 
 {{ Form::text('crusts') }}<br/>
 
-{{ Form::label('calories', 'Calories')}}
+{{ Form::label('calories', 'Kalorijų kiekis')}}
 
 {{ Form::text('calories') }}<br/>
 
-{{ Form::submit('Submit')}}
+{{ Form::submit('Įvesti')}}
 
 {!! Form::close() !!}
 
