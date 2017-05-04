@@ -13,7 +13,7 @@ class CheesesController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		// will show list of Data
 	}
 
 	/**
@@ -40,7 +40,7 @@ class CheesesController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		// w
 	}
 
 	/**
