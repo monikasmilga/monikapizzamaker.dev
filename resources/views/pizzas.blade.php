@@ -10,7 +10,9 @@
     <h4 style="color: red">{{ $error['message'] }}</h4>
 @endif
 
-{{-- TODO check for success message --}}
+@if(isset($success))
+<h4 style="color: green">{{ $success['message'] }}</h4>
+@endif
 
 {!! Form::open(['url' => route('app.pizzas.store')]) !!}
 
@@ -41,7 +43,7 @@
 
 {{Form::textarea('comment')}}<br>
 
-{{ Form::submit('Click Me!')}}
+{{ Form::submit('Užsakyti!')}}
 
 {!! Form::close() !!}
 
