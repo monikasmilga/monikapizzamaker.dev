@@ -16,38 +16,63 @@ Route::get('/', function () {
 });
 
 /**
- * Route to CRUSTS form
+ * Route to CRUSTS adding form and information
  */
 
-Route::get('/crusts', function () {
-    return view('crusts');
+Route::group(['prefix' => 'crust'], function () {
+
+    Route::get('/create', function () {
+        return view('crusts');
+    });
+
+    Route::post('/create', ['as' => 'app.crusts.create', 'uses' => 'CrustsController@create']);
+
+    Route::get('/', ['uses' => 'CrustsController@índex']);
 });
-Route::post('/crusts', ['as' => 'app.crusts.create', 'uses' => 'CrustsController@create']);
 
 
 /**
- * Route to CHEESES form
+ * Route to CHEESES form and information
  */
 
-Route::get('/cheeses', function () {
-    return view('cheeses');
-});
-Route::post('/cheeses', ['as' => 'app.cheeses.create', 'uses' => 'CheesesController@create']);
+Route::group(['prefix' => 'cheese'], function () {
 
+    Route::get('/create', function () {
+        return view('cheeses');
+    });
+
+    Route::post('/create', ['as' => 'app.cheeses.create', 'uses' => 'CheesesController@create']);
+
+    Route::get('/', ['uses' => 'CheesesController@index']);
+
+});
 
 /**
- * Route to INGREDIENTS form
+ * Route to INGREDIENTS form and information
  */
 
-Route::get('/ingredients', function () {
-    return view('ingredients');
-});
-Route::post('/ingredients', ['as' => 'app.ingredients.create', 'uses' => 'IngredientsController@create']);
+Route::group(['prefix' => 'ingredient'], function () {
 
+    Route::get('/create', function () {
+        return view('ingredients');
+    });
+    Route::post('/create', ['as' => 'app.ingredients.create', 'uses' => 'IngredientsController@create']);
+
+    Route::get('/', ['uses' => 'IngredientsController@index']);
+
+});
 
 /**
- * Route to PIZZA ORDERING form
+ * Route to PIZZA information and ordering form
  */
-Route::get('/pizzas', ['uses' => 'PizzasController@create']);
-Route::post('/pizzas', ['as' => 'app.pizzas.store', 'uses' => 'PizzasController@store']);
+
+Route::group(['prefix' => 'pizza'], function () {
+
+    Route::get('/order', ['uses' => 'PizzasController@create']);
+
+    Route::post('/order', ['as' => 'app.pizzas.store', 'uses' => 'PizzasController@store']);
+
+    Route::get('/', ['uses' => 'PizzasController@index']);
+
+});
 
