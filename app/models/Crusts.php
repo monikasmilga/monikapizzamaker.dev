@@ -14,4 +14,6 @@ class Crusts extends CoreModel
 
     protected $table = 'crusts';
     protected $fillable = ['id', 'name', 'calories'];
+
+    protected $hidden =['updated_at', 'deleted_at', 'created_at', 'id', 'count'];
 }

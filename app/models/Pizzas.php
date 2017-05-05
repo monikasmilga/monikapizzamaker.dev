@@ -15,6 +15,8 @@ class Pizzas extends CoreModel
     protected $table = 'pizzas';
     protected $fillable = ['id', 'name', 'phone', 'comment', 'crust_id', 'cheese_id'];
 
+    protected $hidden =['updated_at', 'deleted_at', 'created_at', 'cheese_id', 'crust_id', 'count'];
+
 
     public function crusts()
     {
@@ -26,12 +28,12 @@ class Pizzas extends CoreModel
         return $this->hasOne(Cheeses::class, 'id', 'cheese_id');
     }
 
-    public function pizzasIngredientsConnection()
+    public function ingredients()
     {
-        return $this->hasMany(PizzasIngredientsConnection::class, 'pizza_id', 'id');
+        return $this->hasMany(PizzasIngredientsConnection::class, 'pizza_id', 'id')->with('ingredients');
     }
 
-    public function ingredients()
+    public function ingredientsForSync()
     {
         return $this->belongsToMany(Ingredients::class, 'pizzas_ingredients_connection', 'pizza_id', 'ingredient_id');
     }

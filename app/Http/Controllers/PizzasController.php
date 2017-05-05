@@ -17,7 +17,11 @@ class PizzasController extends Controller
      */
     public function index()
     {
-// will show list of data
+        $config = [];
+        $config['list'] = Pizzas::with(['cheeses', 'crusts', 'ingredients'])->get()->toArray();
+
+        return view('orderlist', $config);
+
     }
 
 
@@ -93,11 +97,11 @@ class PizzasController extends Controller
      * GET /pizzas/{id}
      *
      * @param  int $id
-     * @return Response
+     * @return mixed
      */
     public function show($id)
     {
-        //
+        return Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id);
     }
 
     /**
@@ -109,7 +113,7 @@ class PizzasController extends Controller
      */
     public function edit($id)
     {
-        //
+        return Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id);
     }
 
     /**

@@ -63,7 +63,7 @@ Route::group(['prefix' => 'ingredient'], function () {
 });
 
 /**
- * Route to PIZZA information and ordering form
+ * Route to PIZZA information, ordering form, order and order editing form
  */
 
 Route::group(['prefix' => 'pizza'], function () {
@@ -71,6 +71,15 @@ Route::group(['prefix' => 'pizza'], function () {
     Route::get('/order', ['uses' => 'PizzasController@create']);
 
     Route::post('/order', ['as' => 'app.pizzas.store', 'uses' => 'PizzasController@store']);
+
+    Route::group(['prefix' => '{id}'], function () {
+
+        Route::get('/edit', ['uses' => 'PizzasController@edit']);
+
+        Route::post('/edit', ['uses' => 'PizzasController@update']);
+
+        Route::get('/', ['uses' => 'PizzasController@show']);
+    });
 
     Route::get('/', ['uses' => 'PizzasController@index']);
 

@@ -14,4 +14,6 @@ class Cheeses extends CoreModel
 
     protected $table = 'cheeses';
     protected $fillable = ['id', 'name', 'calories'];
+
+    protected $hidden =['updated_at', 'deleted_at', 'created_at', 'id', 'count'];
 }
