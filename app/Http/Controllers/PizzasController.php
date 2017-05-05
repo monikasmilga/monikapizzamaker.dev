@@ -109,11 +109,14 @@ class PizzasController extends Controller
      * GET /pizzas/{id}/edit
      *
      * @param  int $id
-     * @return Response
+     * @return mixed
      */
     public function edit($id)
     {
-        return Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id);
+        $config = $this->getFormData();
+        $config['item'] = Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id)->toArray();
+
+        return view ('edit', $config);
     }
 
     /**
