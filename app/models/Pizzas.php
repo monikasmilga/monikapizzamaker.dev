@@ -15,7 +15,7 @@ class Pizzas extends CoreModel
     protected $table = 'pizzas';
     protected $fillable = ['id', 'name', 'phone', 'comment', 'crust_id', 'cheese_id'];
 
-    protected $hidden =['updated_at', 'deleted_at', 'created_at', 'cheese_id', 'crust_id', 'count'];
+    protected $hidden =[];
 
 
     public function crusts()

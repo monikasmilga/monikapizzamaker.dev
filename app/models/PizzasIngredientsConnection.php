@@ -15,7 +15,7 @@ class PizzasIngredientsConnection extends CoreModel
     protected $table = 'pizzas_ingredients_connection';
     protected $fillable = ['id', 'pizza_id', 'calories'];
 
-    protected $hidden =['updated_at', 'deleted_at', 'created_at', 'id', 'ingredient_id', 'pizza_id', 'count'];
+    protected $hidden =[];
 
     public function ingredients()
     {

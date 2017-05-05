@@ -76,7 +76,7 @@ Route::group(['prefix' => 'pizza'], function () {
 
         Route::get('/edit', ['uses' => 'PizzasController@edit']);
 
-        Route::post('/edit', ['uses' => 'PizzasController@update']);
+        Route::post('/edit', ['as' => 'app.pizza.update', 'uses' => 'PizzasController@update']);
 
         Route::get('/', ['uses' => 'PizzasController@show']);
     });

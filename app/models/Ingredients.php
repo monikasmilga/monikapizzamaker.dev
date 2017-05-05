@@ -15,5 +15,5 @@ class Ingredients extends CoreModel
     protected $table = 'ingredients';
     protected $fillable = ['id', 'name', 'calories'];
 
-    protected $hidden =['updated_at', 'deleted_at', 'created_at', 'id', 'count'];
+    protected $hidden =[];
 }

@@ -59,15 +59,13 @@ class PizzasController extends Controller
         $config = $this->getFormData();
         $data = request()->all();
 
-        if (!isset($data['name']))
-        {
+        if (!isset($data['name'])) {
             $config['error'] = ['message' => 'Įrašykite savo vardą'];
 
             return view('pizzas', $config);
         }
 
-        if (!isset($data['phone']))
-        {
+        if (!isset($data['phone'])) {
             $config['error'] = ['message' => 'Įrašykite savo tel. nr.'];
 
             return view('pizzas', $config);
@@ -83,7 +81,7 @@ class PizzasController extends Controller
             ]
         );
 
-        if(isset($data['ingredient_id']))
+        if (isset($data['ingredient_id']))
             $record->ingredients()->sync($data['ingredient_id']);
 
         $config['success'] = ['message' => 'Užsakymas gautas, pradedame gamybą'];
@@ -114,9 +112,11 @@ class PizzasController extends Controller
     public function edit($id)
     {
         $config = $this->getFormData();
-        $config['item'] = Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id)->toArray();
+        $config['item'] = Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id);
 
-        return view ('edit', $config);
+        $config['ingredientsItems'] = $config['item']->ingredients->pluck('ingredient_id')->toArray();
+        $config['item'] = $config['item']->toArray();
+        return view('edit', $config);
     }
 
     /**
@@ -128,7 +128,8 @@ class PizzasController extends Controller
      */
     public function update($id)
     {
-        //
+//
+
     }
 
     /**
