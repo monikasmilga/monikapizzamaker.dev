@@ -128,7 +128,30 @@ class PizzasController extends Controller
      */
     public function update($id)
     {
-//
+        $data = request()->all();
+
+        $record = Pizzas::find($id);
+        $record->update([
+            'name' => $data['name'],
+            'cheese_id' => $data['cheese_id'],
+            'crust_id' => $data['crust_id'],
+            'phone' => $data['phone'],
+            'comment' => $data['comment'],
+
+        ]);
+
+        if (!isset($data['ingredients']))
+            $data['ingredients'] = [];
+
+        $record->ingredientsForSync()->sync($data['ingredients']);
+
+        $config = $this->getFormData();
+        $config['item'] = Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id);
+
+        $config['ingredientsItems'] = $config['item']->ingredients->pluck('ingredient_id')->toArray();
+        $config['item'] = $config['item']->toArray();
+
+        return view('edit',$config);
 
     }
 

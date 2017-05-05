@@ -14,7 +14,7 @@
     <h4 style="color: green">{{ $success['message'] }}</h4>
 @endif
 
-{!! Form::open(['url' => route('app.pizzas.store')]) !!}
+{!! Form::open(['url' => route('app.pizza.update', $item['id'])]) !!}
 
 {{ Form::label('crust_id', 'Pasirinkite picos padą')}}
 
