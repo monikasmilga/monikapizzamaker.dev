@@ -82,7 +82,7 @@ class PizzasController extends Controller
         );
 
         if (isset($data['ingredient_id']))
-            $record->ingredients()->sync($data['ingredient_id']);
+            $record->ingredientsForSync()->sync($data['ingredient_id']);
 
         $config['success'] = ['message' => 'Užsakymas gautas, pradedame gamybą'];
 
