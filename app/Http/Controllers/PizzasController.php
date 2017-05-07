@@ -140,10 +140,10 @@ class PizzasController extends Controller
 
         ]);
 
-        if (!isset($data['ingredients']))
-            $data['ingredients'] = [];
+        if (!isset($data['ingredient_id']))
+            $data['ingredient_id'] = [];
 
-        $record->ingredientsForSync()->sync($data['ingredients']);
+        $record->ingredientsForSync()->sync($data['ingredient_id']);
 
         $config = $this->getFormData();
         $config['item'] = Pizzas::with('cheeses', 'crusts', 'ingredients')->find($id);
